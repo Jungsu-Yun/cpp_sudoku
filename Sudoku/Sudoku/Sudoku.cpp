@@ -1,8 +1,5 @@
 ﻿#include "pch.h"
-#include "Sudoku.h"
-#include "SetQuestion.h"
-#include "InputNumbers.h"
-#include "CheckAnswer.h"
+#include "input.h"
 
 
 int main()
