@@ -4,6 +4,10 @@
 
 using namespace std;
 
+void input::init()
+{
+
+}
 void input::ExpectionCheck(int value)
 {
 }
