@@ -1,20 +1,26 @@
 ﻿#include "pch.h"
+#include <iostream>
+#include "Sudoku.h"
 #include "input.h"
 
+using namespace std;
 
 int main()
 {
-	// 게임 시작
-	
-	// 난이도 선택
+	while (true)
+	{
+		Input data;
+		data.init();
+		if (data.ExpectionCheck() == true)
+			continue;
+		else if (data.DuplicateCheck() == true)
+			continue;
+		else
+			data.FillintheBlank();
 
-	// 문제 생성
-
-	// 값 입력
-
-	// 적합성 검토 후 답지에 입력
-
-	// 테이블 완성 시 종료
-
+		if (data.NumbofBlankCheck == true)
+			break;
+	}
+	cout << "축하합니다! 모든 문제를 다 풀어내셨습니다!!" << endl;
 	return 0;
 }

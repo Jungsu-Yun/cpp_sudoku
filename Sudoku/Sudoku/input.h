@@ -1,18 +1,21 @@
 #pragma once
-//#include "Question.h"
+#include "Question.h"
+#include "Level.h"
 
-class input
+class Input : public Question, Level
 {
-private:
+protected:
 	int row;
 	int coloum;
 	int value;
+	int count = 0;
 
 public:
 	void init();
-	void ExpectionCheck(int value);
-	void DuplicateCheck(int value);
-	void FillintheBlank(int row, int coloum, int value);
+	bool ExpectionCheck();
+	bool DuplicateCheck();
+	bool NumbofBlankCheck();
+	void FillintheBlank();
 	void reset();
 };
 
