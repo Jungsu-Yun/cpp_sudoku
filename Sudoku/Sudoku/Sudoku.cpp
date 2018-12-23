@@ -1,26 +1,39 @@
 ﻿#include "pch.h"
 #include <iostream>
-#include "Sudoku.h"
 #include "input.h"
+#include "Answer.h"
+#include "Question.h"
+#include "Board.h"
+#include <Windows.h>
 
 using namespace std;
 
+
 int main()
 {
+	//오프닝 멘트
+	Input data;
+	data.Generate();
+
+	//게임시작
+	data.printboard();
+
 	while (true)
 	{
-		Input data;
 		data.init();
+		data.ExpectionCheck();
 		if (data.ExpectionCheck() == true)
-			continue;
-		else if (data.DuplicateCheck() == true)
-			continue;
-		else
+			data.DuplicateCheck();
+		if (data.ExpectionCheck() == true && data.DuplicateCheck() == true)
+		{
 			data.FillintheBlank();
-
-		if (data.NumbofBlankCheck == true)
+		}
+		data.printboard();
+		if (data.NumbofBlankCheck() == true)
 			break;
 	}
-	cout << "축하합니다! 모든 문제를 다 풀어내셨습니다!!" << endl;
+	//rest 검증
+	//엔딩멘트
+
 	return 0;
 }

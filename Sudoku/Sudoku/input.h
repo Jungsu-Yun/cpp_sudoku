@@ -1,21 +1,23 @@
 #pragma once
 #include "Question.h"
-#include "Level.h"
+#include "Board.h"
 
-class Input : public Question, Level
+class Input : public Board
 {
 protected:
 	int row;
-	int coloum;
+	int column;
 	int value;
-	int count = 0;
+	int cnt;
 
 public:
+	Input();
 	void init();
 	bool ExpectionCheck();
 	bool DuplicateCheck();
 	bool NumbofBlankCheck();
-	void FillintheBlank();
+	int& FillintheBlank();
+	void countprint();
 	void reset();
+	~Input();
 };
-
