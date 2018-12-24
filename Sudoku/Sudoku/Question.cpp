@@ -26,14 +26,14 @@ Question::Question()
 void Question::Generate()
 {
 	Answer::Generate();
-	Level::DecisionBlankNumber();
+	Level::DecisionBlankNum();
 
 	for (int i = 0; i < 9; i++)
 		for (int j = 0; j < 9; j++)
 			this->questionsheet[i][j] = this->answer[i][j];
 
 	srand(time(0));
-	for (int k = 0; k < NumberofBlank; k++)
+	for (int k = 0; k < NumberOfBlank; k++)
 	{
 		int i = rand() % 9;
 		int j = rand() % 9;
@@ -41,25 +41,6 @@ void Question::Generate()
 			k--;
 		else
 			questionsheet[i][j] = 0;
-	}
-	copy();
-}
-
-void Question::copy()
-{
-	for (int i = 0; i < 9; i++)
-		for (int j = 0; j < 9; j++)
-			worksheet[i][j] = questionsheet[i][j];
-}
-
-void Question::Printsheet()
-{
-	system("cls");
-	for (int i = 0; i < 9; i++)
-	{
-		for (int j = 0; j < 9; j++)
-			cout << worksheet[i][j];
-		cout << endl;
 	}
 }
 

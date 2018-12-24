@@ -10,7 +10,5 @@ protected:
 public:
 	Question();
 	void Generate();
-	void copy();
-	void Printsheet();
 	~Question();
 };

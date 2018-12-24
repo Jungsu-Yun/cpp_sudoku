@@ -2,12 +2,9 @@
 class Level
 {
 private:
-	int level;
+	int Level;
 protected:
-	int NumberofBlank;
+	int NumberOfBlank;
 public:
-	Level();
-	int& DecisionBlankNumber();
-	~Level();
+	int DecisionBlankNum();
 };
-

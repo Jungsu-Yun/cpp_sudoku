@@ -1,39 +1,48 @@
 ﻿#include "pch.h"
 #include <iostream>
-#include "input.h"
+#include "Board.h"
+#include "Level.h"
 #include "Answer.h"
 #include "Question.h"
-#include "Board.h"
-#include <Windows.h>
+#include "input.h"
+#include "Windows.h"
 
 using namespace std;
 
-
 int main()
 {
-	//오프닝 멘트
+	system("mode con cols = 92 lines = 30");
 	Input data;
 	data.Generate();
-
-	//게임시작
 	data.printboard();
 
 	while (true)
 	{
 		data.init();
-		data.ExpectionCheck();
-		if (data.ExpectionCheck() == true)
-			data.DuplicateCheck();
-		if (data.ExpectionCheck() == true && data.DuplicateCheck() == true)
+		if (data.ResetCheck() == false)
 		{
-			data.FillintheBlank();
+			if (data.InterruptCheck() == true)
+				break;
+			else
+			{
+				data.ExpectionCheck();
+				if (data.ExpectionCheck() == true)
+					data.DuplicateCheck();
+				if (data.ExpectionCheck() == true && data.DuplicateCheck() == true)
+					data.FillintheBlank();
+				if (data.NumbofBlankCheck() == true)
+					break;
+			}
+			data.printboard();
 		}
-		data.printboard();
-		if (data.NumbofBlankCheck() == true)
-			break;
 	}
-	//rest 검증
-	//엔딩멘트
+	system("cls");
+	cout << "                     _         _ " << endl <<
+		"                    | |       | |" << endl <<
+		"     ____ _    _   _| | ____  | | ___  _   _" << endl <<
+		"    / ___| |  | |/ _  |/ __ ＼| |/  / | | | |" << endl <<
+		"    ＼__ ＼|__| | (_| || (_) ||   <   | |_| |" << endl <<
+		"    |____/＼____/＼___|＼____/|_|＼_＼＼____/" << endl;
 
 	return 0;
 }

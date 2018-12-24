@@ -1,5 +1,4 @@
 #pragma once
-#include "Question.h"
 #include "Board.h"
 
 class Input : public Board
@@ -17,7 +16,7 @@ public:
 	bool DuplicateCheck();
 	bool NumbofBlankCheck();
 	int& FillintheBlank();
-	void countprint();
+	bool ResetCheck();
+	bool InterruptCheck();
 	void reset();
-	~Input();
 };
