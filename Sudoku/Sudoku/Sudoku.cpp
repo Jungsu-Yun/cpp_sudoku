@@ -11,7 +11,6 @@ using namespace std;
 
 int main()
 {
-	system("mode con cols = 92 lines = 30");
 	Input data;
 	data.Generate();
 	data.printboard();
