@@ -1,8 +1,9 @@
 #pragma once
+
 class Answer
 {
 protected:
-	int **answer;
+	char **answer;
 public:
 	Answer();
 	void Generate();

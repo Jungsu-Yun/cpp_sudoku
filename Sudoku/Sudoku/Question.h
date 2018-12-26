@@ -5,8 +5,8 @@
 class Question : public Level, Answer
 {
 protected:
-	int **questionsheet;
-	int **worksheet;
+	char **questionsheet;
+	char **worksheet;
 public:
 	Question();
 	void Generate();

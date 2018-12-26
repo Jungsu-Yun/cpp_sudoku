@@ -8,18 +8,18 @@ using namespace std;
 
 Question::Question()
 {
-	this->questionsheet = new int*[9];
+	this->questionsheet = new char*[ROW];
 	for (int i = 0; i < 9; i++)
 	{
-		questionsheet[i] = new int[9];
-		memset(questionsheet[i], 0, sizeof(int) * 9);
+		questionsheet[i] = new char[COLUME];
+		memset(questionsheet[i], 0, sizeof(char) * COLUME);
 	}
 
-	this->worksheet = new int*[9];
+	this->worksheet = new char*[ROW];
 	for (int i = 0; i < 9; i++)
 	{
-		worksheet[i] = new int[9];
-		memset(worksheet[i], 0, sizeof(int) * 9);
+		worksheet[i] = new char[COLUME];
+		memset(worksheet[i], 0, sizeof(char) * COLUME);
 	}
 }
 
@@ -28,29 +28,30 @@ void Question::Generate()
 	Answer::Generate();
 	Level::DecisionBlankNum();
 
-	for (int i = 0; i < 9; i++)
-		for (int j = 0; j < 9; j++)
+	for (int i = 0; i < COLUME; ++i)
+		for (int j = 0; j < ROW; ++j)
 			this->questionsheet[i][j] = this->answer[i][j];
 
 	srand(time(0));
-	for (int k = 0; k < NumberOfBlank; k++)
+	for (int k = 0; k < NumberOfBlank; ++k)
 	{
-		int i = rand() % 9;
-		int j = rand() % 9;
-		if (questionsheet[i][j] == 0)
-			k--;
+		int i = rand() % COLUME;
+		int j = rand() % ROW;
+
+		if (questionsheet[i][j] == '0')
+			--k;
 		else
-			questionsheet[i][j] = 0;
+			questionsheet[i][j] = '0';
 	}
 }
 
 Question::~Question()
 {
-	for (int i = 0; i < 9; i++)
+	for (int i = 0; i < COLUME; ++i)
 		delete[] questionsheet[i];
 	delete[] questionsheet;
 
-	for (int i = 0; i < 9; i++)
+	for (int i = 0; i < COLUME; i++)
 		delete[] worksheet[i];
 	delete[] worksheet;
 }

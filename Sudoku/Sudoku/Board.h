@@ -1,15 +1,15 @@
 #pragma once
-#define ROW 92
-#define COLUME 22
+
 #include <cstdlib>
 #include "Question.h"
+
 class Board : public Question
 {
 protected:
 	char **colorset;
 	char *question;
 	char *userdata;
-	char board[COLUME][ROW] =
+	char board[BOARD_COLUME][BOARD_ROW] =
 	{ "                                           ",
 	  " ++=++===========+===========+===========++",
 	  " || || 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9 ||",
@@ -35,9 +35,8 @@ protected:
 	};
 public:
 	Board();
-	void init(char* array, int**data);
+	void init(char* array, char**data);
 	void input();
 	void printboard();
 	~Board();
 };
-

@@ -7,7 +7,6 @@
 #include <iostream>
 
 #pragma comment(lib, "Winmm.lib")
-#define SOUND_FILE_NAME ".\\sound\\bgm.wav"
 
 using namespace std;
 
@@ -25,22 +24,20 @@ int main()
 		data.Generate();
 		data.printboard();
 		start = clock();
+
 		while (true)
 		{
 			data.init();
-			if (data.UserMode == 1)
+			if (data.UserMode == RETURN_TO_MAIN)
 				break;
-			else if (data.UserMode == 2)
+			else if (data.UserMode == RESET_GAME)
 				data.reset();
-			else if (data.UserMode == 3)
+			else if (data.UserMode == EXIT_GAME)
 				break;
 			else
 			{
-				if (data.ExpectionCheck() == true)
-				{
-					if (data.DuplicateCheck() == true)
-						data.FillintheBlank();
-				}
+				if (data.ExpectionCheck() == true && data.DuplicateCheck() == true)
+					data.FillintheBlank();
 				if (data.NumbofBlankCheck() == true)
 				{
 					ending.Check(data.UserMode);
@@ -49,6 +46,7 @@ int main()
 				data.printboard();
 			}
 		}
+
 		if (ending.Check(data.UserMode) == false)
 		{
 			ending.shutdown();
@@ -60,6 +58,7 @@ int main()
 			ending.ending(start, end);
 			break;
 		}
+
 	}
 
 	return 0;
