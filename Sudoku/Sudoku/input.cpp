@@ -18,7 +18,7 @@ void Input::init()
 		this->UserMode = 1;
 	else if (initData[0] == 'w' || initData[0] == 'W')
 		this->UserMode = 2;
-	else if (initData[0] == 'e' || initData[0] == 'E')
+	else if (initData[0] == 'e' || initData[0] == 'E')  
 		this->UserMode = 3;
 	else
 	{
