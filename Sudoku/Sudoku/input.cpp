@@ -10,23 +10,21 @@ Input::Input()
 
 void Input::init()
 {
-	char initData[6];
 	cout << endl;
 	cout << "  입력하고자 하는 행/열/값을 입력해주세요! : ";
-	cin >> initData;
-	if (initData[0] == 'q' || initData[0] == 'Q')
+	cin >> this->row;
+	if (this->row == 'q' || this->row == 'Q')
 		this->UserMode = 1;
-	else if (initData[0] == 'w' || initData[0] == 'W')
+	else if (this->row == 'w' || this->row == 'W')
 		this->UserMode = 2;
-	else if (initData[0] == 'e' || initData[0] == 'E')  
+	else if (this->row == 'e' || this->row == 'E')
 		this->UserMode = 3;
 	else
 	{
-		this->row = (int)initData[0];
-		this->column = (int)initData[2];
-		this->value = (int)initData[4];
+		cin >> this->column >> this->value;
 		this->UserMode = 0;
 	}
+		
 }
 bool Input::ExpectionCheck()
 {
@@ -83,6 +81,11 @@ bool Input::InterruptCheck()
 	if (this->row == 10 && this->column == 10 && this->value == 10)
 		return true;
 	return false;
+}
+
+void Input::print()
+{
+	cout << this->row << this->column << this->value << this -> UserMode << endl;
 }
 
 bool Input::NumbofBlankCheck()

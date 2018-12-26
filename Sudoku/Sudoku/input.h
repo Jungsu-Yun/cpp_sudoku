@@ -4,9 +4,9 @@
 class Input : public Board
 {
 protected:
-	int row;
-	int column;
-	int value;
+	char row;
+	char column;
+	char value;
 	int cnt;
 
 public:
@@ -20,5 +20,6 @@ public:
 	int& FillintheBlank();
 	bool ResetCheck();
 	bool InterruptCheck();
+	void print();
 	void reset();
 };

@@ -19,6 +19,10 @@ int main()
 	clock_t start, end;
 
 	Input data;
+
+	data.init();
+	data.print();
+	/*
 	Display ending;
 	while(true)
 	{
@@ -61,6 +65,6 @@ int main()
 			break;
 		}
 	}
-
+	*/
 	return 0;
 }
