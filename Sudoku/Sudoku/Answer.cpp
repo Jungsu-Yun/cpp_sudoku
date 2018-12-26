@@ -13,7 +13,7 @@ Answer::Answer()
 		answer[i] = new char[ROW];
 }
 
-void Answer::Generate() {
+char Answer::Generate() {
 	int count = 0;
 	int GameNumber = rand() % GAMECOUNT - 1;
 	for (int i = 0; i < COLUME; ++i)
@@ -21,6 +21,7 @@ void Answer::Generate() {
 			answer[i][j] = RandomAnswer[GameNumber][count];
 			++count;
 		}
+	return **answer;
 }
 
 Answer::~Answer() {

@@ -17,6 +17,6 @@ protected:
 	char **answer;
 public:
 	Answer();
-	void Generate();
+	char Generate();
 	~Answer();
 };

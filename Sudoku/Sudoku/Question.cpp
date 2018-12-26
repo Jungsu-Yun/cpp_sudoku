@@ -23,15 +23,13 @@ Question::Question()
 	}
 }
 
-void Question::Generate(int NumberOfBlank)
+char Question::Generate(int NumberOfBlank, char **answer)
 {
 	this->NumberOfBlank = NumberOfBlank;
 
-	Answer::Generate();
-
 	for (int i = 0; i < COLUME; ++i)
 		for (int j = 0; j < ROW; ++j)
-			this->questionsheet[i][j] = this->answer[i][j];
+			this->questionsheet[i][j] = answer[i][j];
 
 	srand(time(0));
 	for (int k = 0; k < NumberOfBlank; ++k)
@@ -44,6 +42,16 @@ void Question::Generate(int NumberOfBlank)
 		else
 			questionsheet[i][j] = '0';
 	}
+	return **questionsheet;
+}
+
+char Question::reset()
+{
+	for (int i = 0; i < COLUME; i++)
+		for (int j = 0; j < ROW; j++)
+			worksheet[i][j] = '0';
+	cnt = 0;
+	return **worksheet;
 }
 
 Question::~Question()

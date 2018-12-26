@@ -35,7 +35,7 @@ protected:
 	};
 public:
 	Board();
-	void init(char* array, char**data);
+	char init(char* array, char**data);
 	void input();
 	void printboard();
 	~Board();

@@ -16,7 +16,6 @@ public:
 	void init();
 	bool ExpectionCheck();
 	bool DuplicateCheck();
-	bool NumbofBlankCheck();
+	bool NumbofBlankCheck(int NumberOfBlank);
 	char& FillintheBlank();
-	void reset();
 };

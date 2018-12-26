@@ -19,7 +19,7 @@ Board::Board()
 	userdata = new char[81];
 }
 
-void Board::init(char* array, char** data)
+char Board::init(char* array, char** data)
 {
 	int cnt = 0;
 	for (int i = 0; i < COLUME; i++)
@@ -31,15 +31,16 @@ void Board::init(char* array, char** data)
 				array[cnt] = data[i][j];
 			cnt++;
 		}
+	return *array;
 }
 
 void Board::input()
 {
-	init(question, questionsheet);
-	init(userdata, worksheet);
+//	init(question, questionsheet);
+//	init(userdata, worksheet);
 	int count = 0;
-	for (int i = 4; i < 21; i++)
-		for (int j = 7; j < 42; j++)
+	for (int i = 4; i < 21; ++i)
+		for (int j = 7; j < 42; ++j)
 			if (i % 2 == 0 && j % 4 == 3)
 			{
 				if (question[count] == ' ')

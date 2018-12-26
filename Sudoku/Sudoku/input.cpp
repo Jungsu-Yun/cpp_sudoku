@@ -66,17 +66,10 @@ char& Input::FillintheBlank()
 	return worksheet[this->column - '1'][this->row - '1'] = this->value;
 }
 
-bool Input::NumbofBlankCheck()
+bool Input::NumbofBlankCheck(int NumberOfBlank)
 {
 	if (cnt == NumberOfBlank)
 		return true;
 	return false;
 }
 
-void Input::reset()
-{
-	for (int i = 0; i < COLUME; i++)
-		for (int j = 0; j < ROW; j++)
-			worksheet[i][j] = '0';
-	cnt = 0;
-}
