@@ -56,21 +56,20 @@ bool Input::DuplicateCheck()
 	}
 	if (value != 0)
 		for (int i = 0; i < 9; i++)
-			if (worksheet[this->column - 1][i] == value || worksheet[i][this->row - 1] == value)
+			if (worksheet[this->column - 1][i] == value || worksheet[i][this->row - 1] == value || questionsheet[this->column - 1][i] == value || questionsheet[i][this->row - 1] == value)
 			{
 				cout << endl;
 				cout << "  중복값이 존재합니다. 다시 입력해주세요!" << endl;
 				Sleep(1000);
 				return false;
 			}
-
 	return true;
 }
 
 int& Input::FillintheBlank()
 {
-	if (value != 0)
-		++cnt;
+	if (worksheet[this->column - 1][this->row - 1] == 0)
+		cnt++;
 	return worksheet[this->column - 1][this->row - 1] = this->value;
 }
 
@@ -93,10 +92,10 @@ bool Input::InterruptCheck()
 
 bool Input::NumbofBlankCheck()
 {
-	if (cnt != NumberOfBlank)
-		return false;
+	if (cnt == NumberOfBlank)
+		return true;
 
-	return true;
+	return false;
 }
 
 void Input::reset()
@@ -104,4 +103,5 @@ void Input::reset()
 	for (int i = 0; i < 9; i++)
 		for (int j = 0; j < 9; j++)
 			worksheet[i][j] = 0;
+	cnt = 0;
 }

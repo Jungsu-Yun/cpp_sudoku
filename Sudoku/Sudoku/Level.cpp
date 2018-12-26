@@ -11,20 +11,21 @@ using namespace std;
 int Level::DecisionBlankNum() {
 	system("cls");
 	SetConsoleTextAttribute(GetStdHandle(STD_OUTPUT_HANDLE), 12);
-	cout << "                     _         _ " << endl <<
-		"                    | |       | |" << endl <<
-		"     ____ _    _   _| | ____  | | ___  _   _" << endl <<
-		"    / ___| |  | |/ _  |/ __ ＼| |/  / | | | |" << endl <<
-		"    ＼__ ＼|__| | (_| || (_) ||   <   | |_| |" << endl <<
-		"    |____/＼____/＼___|＼____/|_|＼_＼＼____/" << endl;
+	cout << endl << endl << endl << endl << endl << endl << endl << endl << endl;
+	cout << "                                         _         _ " << endl <<
+		"                                        | |       | |" << endl <<
+		"                         ____ _    _   _| | ____  | | ___  _   _" << endl <<
+		"                        / ___| |  | |/ _  |/ __ ＼| |/  / | | | |" << endl <<
+		"                        ＼__ ＼|__| | (_| || (_) ||   <   | |_| |" << endl <<
+		"                        |____/＼____/＼___|＼____/|_|＼_＼＼____/" << endl;
 	SetConsoleTextAttribute(GetStdHandle(STD_OUTPUT_HANDLE), 7);
-	cout << endl << "    쉬움";	SetConsoleTextAttribute(GetStdHandle(STD_OUTPUT_HANDLE), 10);
+	cout << endl << "                              쉬움";	SetConsoleTextAttribute(GetStdHandle(STD_OUTPUT_HANDLE), 10);
 	cout << "[1]";	SetConsoleTextAttribute(GetStdHandle(STD_OUTPUT_HANDLE), 7);
 	cout << ", 중간";	SetConsoleTextAttribute(GetStdHandle(STD_OUTPUT_HANDLE), 10);
 	cout << "[2]"; SetConsoleTextAttribute(GetStdHandle(STD_OUTPUT_HANDLE), 7);
 	cout << ", 어려움"; SetConsoleTextAttribute(GetStdHandle(STD_OUTPUT_HANDLE), 10);
 	cout << "[3]" << endl; SetConsoleTextAttribute(GetStdHandle(STD_OUTPUT_HANDLE), 7);
-	cout << "    난이도를 선택 하시오 : ";
+	cout << "                               난이도를 입력 하시오 : ";
 	cin >> Level;
 
 	if (Level == 1)

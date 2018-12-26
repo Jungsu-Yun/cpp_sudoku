@@ -10,7 +10,11 @@ Board::Board()
 {
 	colorset = new char *[COLUME];
 	for (int i = 0; i < COLUME; i++)
+	{
 		colorset[i] = new char[ROW];
+		memset(colorset[i], 0, sizeof(char)*ROW);
+	}
+
 
 	question = new char[81];
 	userdata = new char[81];
@@ -64,6 +68,7 @@ void Board::printboard()
 	input();
 
 	system("cls");
+	cout << endl << endl;
 	for (int i = 0; i < COLUME; i++)
 	{
 		for (int j = 0; j < ROW; j++)
@@ -95,4 +100,7 @@ Board::~Board()
 	for (int i = 0; i < COLUME; i++)
 		delete[] colorset[i];
 	delete[] colorset;
+
+	delete[] userdata;
+	delete[] question;
 }

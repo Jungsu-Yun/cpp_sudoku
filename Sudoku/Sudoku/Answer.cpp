@@ -10,7 +10,7 @@ using namespace std;
 Answer::Answer() {
 
 	answer = new int *[9];
-	for (int i = 0; i < 10; i++)
+	for (int i = 0; i < 9; i++)
 		answer[i] = new int[9];
 }
 
@@ -20,7 +20,7 @@ void Answer::Generate() {
 	string FileName[GameCount] =
 	{ "data\\1.txt", "data\\2.txt", "data\\3.txt", "data\\4.txt", "data\\5.txt", "data\\6.txt", "data\\7.txt", "data\\8.txt", "data\\9.txt" };
 
-	char inputString[100];
+	char inputString[100] = { 0, };
 	ifstream inFile(FileName[RandomFileNumber]);
 	if (!inFile.is_open()) {
 		cout << " Error. There is no Answer File." << endl;
