@@ -6,39 +6,34 @@
 using namespace std;
 
 Input::Input()
-{
-	this->row = row;
-	this->column = column;
-	this->value = value;
-	this->cnt = 0;
-}
+: cnt(0){}
 
 void Input::init()
 {
+	char initData[6];
 	cout << endl;
 	cout << "  입력하고자 하는 행/열/값을 입력해주세요! : ";
-	cin >> this->row >> this->column >> this->value;
+	cin >> initData;
+	if (initData[0] == 'q' || initData[0] == 'Q')
+		this->UserMode = 1;
+	else if (initData[0] == 'w' || initData[0] == 'W')
+		this->UserMode = 2;
+	else if (initData[0] == 'e' || initData[0] == 'E')
+		this->UserMode = 3;
+	else
+	{
+		this->row = (int)initData[0];
+		this->column = (int)initData[2];
+		this->value = (int)initData[4];
+		this->UserMode = 0;
+	}
 }
 bool Input::ExpectionCheck()
 {
-	if (this->row < 1 || this->row > 9)
+	if (this->row < 1 || this->row > 9 || this->column < 1 || this->column > 9 || this->value < 0 || this->value > 9)
 	{
 		cout << endl;
-		cout << "  한 행에는 1~9사이의 수만 존재합니다." << endl;
-		Sleep(1000);
-		return false;
-	}
-	else if (this->column < 1 || this->column > 9)
-	{
-		cout << endl;
-		cout << "  한 열에는 1 ~ 9 사이의 수만 존재합니다" << endl;
-		Sleep(1000);
-		return false;
-	}
-	else if (this->value < 0 || this->value > 9)
-	{
-		cout << endl;
-		cout << "  0 ~ 9 사이의 값만 입력할 수 있습니다." << endl;
+		cout << "  잘못된 값입니다. 다시 입력해 주세요." << endl;
 		Sleep(1000);
 		return false;
 	}

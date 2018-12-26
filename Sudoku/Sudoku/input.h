@@ -10,6 +10,8 @@ protected:
 	int cnt;
 
 public:
+	int UserMode = 0;
+	
 	Input();
 	void init();
 	bool ExpectionCheck();
