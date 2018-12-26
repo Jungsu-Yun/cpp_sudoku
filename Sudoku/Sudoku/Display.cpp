@@ -34,6 +34,7 @@ void Display::ending(clock_t start, clock_t end)
 		<< "                                 Thank you for enjoying!!" << endl;
 	SetConsoleTextAttribute(GetStdHandle(STD_OUTPUT_HANDLE), WHITE);
 	Sleep(5000);
+	exit(1); //add
 }
 
 void Display::shutdown()

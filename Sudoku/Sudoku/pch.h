@@ -18,7 +18,7 @@
 #define RETURN_TO_MAIN 1
 #define RESET_GAME 2
 #define EXIT_GAME 3
-#define GOOD_END 4
+#define GOOD_END 4 //add
 
 #define GAMECOUNT 9
 #define FILEBUFFER 100

@@ -20,7 +20,7 @@ void Input::init()
 		this->UserMode = RESET_GAME;
 	else if (this->row == 'e' || this->row == 'E')
 		this->UserMode = EXIT_GAME;
-	else if (this->row == 'v' || this->row == 'V')
+	else if (this->row == 'v' || this->row == 'V') //add
 		this->UserMode = GOOD_END;
 	else
 	{

@@ -36,6 +36,10 @@ int main()
 				break;
 			else if (data.UserMode == RESET_GAME)
 				data.reset();
+			else if (data.UserMode == GOOD_END){
+				end = clock();
+				ending.ending(start, end);
+			}
 			else
 			{
 				if (data.ExpectionCheck() == true && data.DuplicateCheck() == true)
