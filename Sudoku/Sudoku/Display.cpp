@@ -7,9 +7,9 @@ using namespace std;
 
 bool Display::Check(int data)
 {
-	if (data != 0)
-		return false;
-	return true;
+	if (data == 3)
+		return true;
+	return false;
 }
 
 void Display::ending(clock_t start, clock_t end)
@@ -18,21 +18,21 @@ void Display::ending(clock_t start, clock_t end)
 	clock_t sec = (end - start) / CLOCKS_PER_SEC % 60;
 
 	system("cls");
-	
+
 	cout << endl << endl << endl << endl << endl << endl << endl << endl;
-	SetConsoleTextAttribute(GetStdHandle(STD_OUTPUT_HANDLE), 10);
+	SetConsoleTextAttribute(GetStdHandle(STD_OUTPUT_HANDLE), LIGHTGREEN);
 	cout << "                                  소요 시간 : " << min % 60 << " 분  " << sec << " 초" << endl;
-	SetConsoleTextAttribute(GetStdHandle(STD_OUTPUT_HANDLE), 12);
+	SetConsoleTextAttribute(GetStdHandle(STD_OUTPUT_HANDLE), RED);
 	cout << "                                         _         _ " << endl <<
 		"                                        | |       | |" << endl <<
 		"                         ____ _    _   _| | ____  | | ___  _   _" << endl <<
 		"                        / ___| |  | |/ _  |/ __ ＼| |/  / | | | |" << endl <<
 		"                        ＼__ ＼|__| | (_| || (_) ||   <   | |_| |" << endl <<
 		"                        |____/＼____/＼___|＼____/|_|＼_＼＼____/" << endl;
-	SetConsoleTextAttribute(GetStdHandle(STD_OUTPUT_HANDLE), 10);
+	SetConsoleTextAttribute(GetStdHandle(STD_OUTPUT_HANDLE), LIGHTGREEN);
 	cout << endl << "                               Designed by 'Team Bed Smell'" << endl
 		<< "                                 Thank you for enjoying!!" << endl;
-	SetConsoleTextAttribute(GetStdHandle(STD_OUTPUT_HANDLE), 15);
+	SetConsoleTextAttribute(GetStdHandle(STD_OUTPUT_HANDLE), WHITE);
 	Sleep(5000);
 }
 
@@ -63,7 +63,5 @@ void Display::shutdown()
 		<< "                                ymy----```hm/`+mmm.``-mm/-+mm-`::-" << endl
 		<< "                                ohhyyys```sh:``+hh.``.hhyyhs:``sh+" << endl;
 
-	Sleep(10000);
-	system("cls");
-
+	Sleep(5000);
 }

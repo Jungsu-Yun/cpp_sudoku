@@ -11,15 +11,11 @@ protected:
 
 public:
 	int UserMode = 0;
-	
+
 	Input();
 	void init();
 	bool ExpectionCheck();
 	bool DuplicateCheck();
 	bool NumbofBlankCheck();
-	int& FillintheBlank();
-	bool ResetCheck();
-	bool InterruptCheck();
-	void print();
-	void reset();
+	char& FillintheBlank();
 };

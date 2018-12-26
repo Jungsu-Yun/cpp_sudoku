@@ -1,70 +1,64 @@
 ﻿#include "pch.h"
+#include "Windows.h"
+#include "Level.h"
 #include "input.h"
 #include "Display.h"
-#include "Windows.h"
+
 #include <mmsystem.h>
 #include <ctime>
 #include <iostream>
 
 #pragma comment(lib, "Winmm.lib")
-#define SOUND_FILE_NAME ".\\sound\\bgm.wav"
 
 using namespace std;
 
 int main()
 {
 	system("mode con: cols=92 lines=30");
-	
 	PlaySound(TEXT(SOUND_FILE_NAME), NULL, SND_FILENAME | SND_ASYNC | SND_LOOP);
 	clock_t start, end;
 
+	Answer answer;
+	Level level;
 	Input data;
-
-	data.init();
-	data.print();
-	/*
 	Display ending;
-	while(true)
+
+	while (true)
 	{
-		data.Generate();
+		data.Generate(level.DecisionBlankNum(), answer.Generate());
 		data.printboard();
 		start = clock();
+
 		while (true)
 		{
 			data.init();
-			if (data.UserMode == 1)
+			if (data.UserMode == RETURN_TO_MAIN || data.UserMode == EXIT_GAME)
 				break;
-			else if (data.UserMode == 2)
+			else if (data.UserMode == RESET_GAME)
 				data.reset();
-			else if (data.UserMode == 3)
-				break;
 			else
 			{
-				if (data.ExpectionCheck() == true)
-				{
-					if (data.DuplicateCheck() == true)
-						data.FillintheBlank();
-				}
+				if (data.ExpectionCheck() == true && data.DuplicateCheck() == true)
+					data.FillintheBlank();
 				if (data.NumbofBlankCheck() == true)
 				{
 					ending.Check(data.UserMode);
 					break;
 				}
-				data.printboard();
 			}
+			data.printboard();
 		}
-		if (ending.Check(data.UserMode) == false)
+		if (ending.Check(data.UserMode) == true)
 		{
 			ending.shutdown();
 			break;
 		}
-		else
-		{
-			end = clock();
-			ending.ending(start, end);
-			break;
-		}
 	}
-	*/
+	if (ending.Check(data.UserMode == false))
+	{
+		end = clock();
+		ending.ending(start, end);
+	}
+
 	return 0;
 }

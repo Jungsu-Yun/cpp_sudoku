@@ -2,13 +2,17 @@
 #include "Level.h"
 #include "Answer.h"
 
-class Question : public Level, Answer
+class Question
 {
 protected:
-	int **questionsheet;
-	int **worksheet;
+	char **questionsheet;
+	char **worksheet;
+	int NumberOfBlank;
+	int cnt;
+
 public:
 	Question();
-	void Generate();
+	char Generate(int NumberOfBlank, char** answer);
+	char reset();
 	~Question();
 };

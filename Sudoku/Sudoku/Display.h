@@ -4,8 +4,8 @@
 class Display
 {
 protected:
-	int **questionsheet;
-	int **worksheet;
+	char **questionsheet;
+	char **worksheet;
 public:
 	bool Check(int data);
 	void ending(clock_t start, clock_t end);
