@@ -49,7 +49,7 @@ bool Input::DuplicateCheck()
 	}
 	if (value != '0')
 		for (int i = 0; i < 9; ++i)
-			if (worksheet[this->column - '1'][i - '0'] == value || worksheet[i - '0'][this->row- '1'] == value || questionsheet[this->column - '1'][i - '0'] == value || questionsheet[i - '0'][this->row - '1'] == value)
+			if (worksheet[this->column - '1'][i] == value || worksheet[i][this->row- '1'] == value || questionsheet[this->column - '1'][i] == value || questionsheet[i][this->row - '1'] == value)
 			{
 				cout << endl;
 				cout << "  중복값이 존재합니다. 다시 입력해주세요!" << endl;

@@ -23,10 +23,11 @@ Question::Question()
 	}
 }
 
-void Question::Generate()
+void Question::Generate(int NumberOfBlank)
 {
+	this->NumberOfBlank = NumberOfBlank;
+
 	Answer::Generate();
-	Level::DecisionBlankNum();
 
 	for (int i = 0; i < COLUME; ++i)
 		for (int j = 0; j < ROW; ++j)

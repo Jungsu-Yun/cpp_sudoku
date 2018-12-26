@@ -2,6 +2,7 @@
 #include "input.h"
 #include "Display.h"
 #include "Windows.h"
+#include "Level.h"
 #include <mmsystem.h>
 #include <ctime>
 #include <iostream>
@@ -16,12 +17,13 @@ int main()
 	
 	PlaySound(TEXT(SOUND_FILE_NAME), NULL, SND_FILENAME | SND_ASYNC | SND_LOOP);
 	clock_t start, end;
-
+	Level level;
 	Input data;
 	Display ending;
+
 	while(true)
 	{
-		data.Generate();
+		data.Generate(level.DecisionBlankNum());
 		data.printboard();
 		start = clock();
 

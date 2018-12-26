@@ -63,7 +63,7 @@ void Display::shutdown()
 		<< "                                ymy----```hm/`+mmm.``-mm/-+mm-`::-" << endl
 		<< "                                ohhyyys```sh:``+hh.``.hhyyhs:``sh+" << endl;
 
-	Sleep(10000);
+	Sleep(5000);
 	system("cls");
 
 }

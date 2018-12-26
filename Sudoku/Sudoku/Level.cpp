@@ -8,8 +8,9 @@ using namespace std;
 int Level::DecisionBlankNum() {
 	system("cls");
 	SetConsoleTextAttribute(GetStdHandle(STD_OUTPUT_HANDLE), RED);
-	cout << endl << endl << endl << endl << endl << endl << endl << endl << endl;
-	cout << "                                         _         _ " << endl <<
+	cout << endl << "  v 1.1" << endl << endl << endl << endl << endl << endl << endl << endl;
+	cout <<
+		"                                         _         _ " << endl <<
 		"                                        | |       | |" << endl <<
 		"                         ____ _    _   _| | ____  | | ___  _   _" << endl <<
 		"                        / ___| |  | |/ _  |/ __ ¡¬| |/  / | | | |" << endl <<
