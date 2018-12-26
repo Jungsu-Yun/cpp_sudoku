@@ -18,7 +18,7 @@ public:
 	bool DuplicateCheck();
 	bool NumbofBlankCheck();
 	char& FillintheBlank();
-	bool ResetCheck();
-	bool InterruptCheck();
+//	bool ResetCheck();
+//	bool InterruptCheck();
 	void reset();
 };

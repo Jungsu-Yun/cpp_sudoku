@@ -10,21 +10,19 @@ Input::Input()
 
 void Input::init()
 {
-	char initData[6];
 	cout << endl;
 	cout << "  입력하고자 하는 행/열/값을 입력해주세요! : ";
-	cin >> initData;
-	if (initData[0] == 'q' || initData[0] == 'Q')
+	cin >> this->row;
+	if (this->row == 'q' || this->row == 'Q')
 		this->UserMode = RETURN_TO_MAIN;
-	else if (initData[0] == 'w' || initData[0] == 'W')
+	else if (this->row == 'w' || this->row == 'W')
 		this->UserMode = RESET_GAME;
-	else if (initData[0] == 'e' || initData[0] == 'E')  
+	else if (this->row == 'e' || this->row == 'E')  
 		this->UserMode = EXIT_GAME;
 	else
 	{
-		this->row = initData[0];
-		this->column = initData[2];
-		this->value = initData[4];
+		cin >> this->column >> this->value;
+		this->UserMode = 0;
 	}
 }
 
@@ -42,7 +40,7 @@ bool Input::ExpectionCheck()
 
 bool Input::DuplicateCheck()
 {
-	if (questionsheet[this->column - 1][this->row - 1] != '0')
+	if (questionsheet[this->column - '1'][this->row - '1'] != '0')
 	{
 		cout << endl;
 		cout << "  해당 칸에는 이미 값이 있습니다! 다시 입력해주세요!" << endl;
@@ -51,7 +49,7 @@ bool Input::DuplicateCheck()
 	}
 	if (value != '0')
 		for (int i = 0; i < 9; ++i)
-			if (worksheet[(int)this->column - 1][(int)i] == value || worksheet[(int)i][(int)this->row - 1] == value || questionsheet[(int)this->column - 1][(int)i] == value || questionsheet[(int)i][(int)this->row - 1] == value)
+			if (worksheet[this->column - '1'][i - '0'] == value || worksheet[i - '0'][this->row- '1'] == value || questionsheet[this->column - '1'][i - '0'] == value || questionsheet[i - '0'][this->row - '1'] == value)
 			{
 				cout << endl;
 				cout << "  중복값이 존재합니다. 다시 입력해주세요!" << endl;
@@ -63,28 +61,11 @@ bool Input::DuplicateCheck()
 
 char& Input::FillintheBlank()
 {
-	if (worksheet[this->column - 1][this->row - 1] == '0')
+	if (worksheet[this->column - '1'][this->row - '1'] == '0')
 		cnt++;
-	return worksheet[this->column - 1][this->row - 1] = this->value;
-}
-/*
-bool Input::ResetCheck()
-{
-	if (this->row == '0' && this->column == '0' && this->value == '0')
-	{
-		reset();
-		return true;
-	}
-	return false;
+	return worksheet[this->column - '1'][this->row - '1'] = this->value;
 }
 
-bool Input::InterruptCheck()
-{
-	if (this->row == '10' && this->column == '10' && this->value == '10')
-		return true;
-	return false;
-}
-*/
 bool Input::NumbofBlankCheck()
 {
 	if (cnt == NumberOfBlank)
