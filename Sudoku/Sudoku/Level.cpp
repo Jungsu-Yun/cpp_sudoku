@@ -15,7 +15,7 @@ int Level::DecisionBlankNum() {
 		"                        / ___| |  | |/ _  |/ __ ＼| |/  / | | | |" << endl <<
 		"                        ＼__ ＼|__| | (_| || (_) ||   <   | |_| |" << endl <<
 		"                        |____/＼____/＼___|＼____/|_|＼_＼＼____/" << endl;
-	SetConsoleTextAttribute(GetStdHandle(STD_OUTPUT_HANDLE), 7);
+	SetConsoleTextAttribute(GetStdHandle(STD_OUTPUT_HANDLE), WHITE);
 	cout << endl << "                              쉬움";	SetConsoleTextAttribute(GetStdHandle(STD_OUTPUT_HANDLE), LIGHTGREEN);
 	cout << "[1]";	SetConsoleTextAttribute(GetStdHandle(STD_OUTPUT_HANDLE), WHITE);
 	cout << ", 중간";	SetConsoleTextAttribute(GetStdHandle(STD_OUTPUT_HANDLE), LIGHTGREEN);
