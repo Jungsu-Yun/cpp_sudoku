@@ -60,7 +60,6 @@ int main()
 			ending.ending(start, end);
 			break;
 		}
-
 	}
 
 	return 0;

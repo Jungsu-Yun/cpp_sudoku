@@ -7,7 +7,7 @@ using namespace std;
 
 bool Display::Check(int data)
 {
-	if (data != 0)
+	if (data == 3)
 		return false;
 	return true;
 }
